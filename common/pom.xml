@@ -63,9 +63,10 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
         </dependency>
+        <!--通用Mapper -->
         <dependency>
-            <groupId>com.baoquan</groupId>
-            <artifactId>eagle-sdk</artifactId>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

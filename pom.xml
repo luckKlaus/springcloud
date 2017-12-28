@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>common</module>
+        <module>server</module>
+        <module>gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -44,11 +46,17 @@
             <artifactId>spring-cloud-dependencies</artifactId>
             <version>Dalston.SR3</version>
             <type>pom</type>
-            <scope>import</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <!-- cloud-common -->
+            <dependency>
+                <groupId>com.luck.cloud</groupId>
+                <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.github.penggle</groupId>
                 <artifactId>kaptcha</artifactId>
@@ -124,7 +132,6 @@
                 <version>2.4</version>
                 <classifier>jdk15</classifier>
             </dependency>
-
             <dependency>
                 <groupId>org.json</groupId>
                 <artifactId>json</artifactId>
@@ -169,11 +176,11 @@
                 <artifactId>jsch</artifactId>
                 <version>0.1.50</version>
             </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.4</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>commons-io</groupId>-->
+                <!--<artifactId>commons-io</artifactId>-->
+                <!--<version>2.5</version>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>cn.jpush.api</groupId>
                 <artifactId>jpush-client</artifactId>
@@ -190,11 +197,11 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>1.7.25</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>3.10-FINAL</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.apache.poi</groupId>-->
+                <!--<artifactId>poi</artifactId>-->
+                <!--<version>3.10-FINAL</version>-->
+            <!--</dependency>-->
             <!-- https://mvnrepository.com/artifact/com.github.ulisesbocchio/jasypt-spring-boot-starter -->
             <dependency>
                 <groupId>com.github.ulisesbocchio</groupId>

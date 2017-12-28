@@ -1,4 +1,4 @@
-package com.luck.cloud.spring.myMapper;
+package com.luck.cloud;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

@@ -13,9 +13,10 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableZuulProxy
 @SpringBootApplication
 @EnableAutoConfiguration
-@EntityScan("com.gimi.cloud.uxq.cloud.entity")
-@ComponentScan({"com.luck.cloud.gateway","com.luck.cloud.spring.mybatis"})
+@EntityScan("com.luck.cloud.gateway.entity")
+@ComponentScan({"com.luck.cloud.gateway"})
 public class GateWayCloudApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(GateWayCloudApplication.class, args);
     }
