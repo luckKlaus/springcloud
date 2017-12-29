@@ -91,9 +91,10 @@ public class JsonUtil {
 	 * @param cl
 	 * @return
 	 */
-	public static Object netJsonToBean(String jsonStr,Class<?> cl){
+	@SuppressWarnings("unchecked")
+	public static <T> T netJsonToBean(String jsonStr,Class<T> cl){
 		JSONObject jsonObject = JSONObject.fromObject(jsonStr);
-		return JSONObject.toBean(jsonObject,cl);
+		return (T) JSONObject.toBean(jsonObject,cl);
 	}
 	/**
 	 * 
@@ -159,7 +160,8 @@ public class JsonUtil {
 	            //如果内层还是数组的话，继续解析  
 	            if(v instanceof JSONArray){  
 	                List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();  
-	                Iterator<JSONObject> it = ((JSONArray)v).iterator();  
+	                @SuppressWarnings("unchecked")
+					Iterator<JSONObject> it = ((JSONArray)v).iterator();  
 	                while(it.hasNext()){  
 	                    JSONObject json2 = it.next();  
 	                    list.add(parseJSON2Map(json2.toString()));  
@@ -229,7 +231,7 @@ public class JsonUtil {
 	public static String buildJSON(Map<String, Object> params)
 			throws JSONException {
 		JSONObject jsonObject = new JSONObject();
-		for (Map.Entry param : params.entrySet()) {
+		for (Map.Entry<String, Object> param : params.entrySet()) {
 			if ((param.getKey() != null) && (!"".equals(param.getKey()))) {
 				jsonObject.put((String) param.getKey(),
 						param.getValue() == null ? "" : param.getValue());
