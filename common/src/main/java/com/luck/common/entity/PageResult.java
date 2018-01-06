@@ -5,11 +5,16 @@ import com.github.pagehelper.PageInfo;
 import java.util.List;
 
 public class PageResult<T> {
-    long pageNum;//当前页
-    long pageSize;//每页的数量
-    long pages;//总页数
-    long total;//总记录数
-    List<T> rows;
+    /**当前页*/
+    private long pageNum;
+    /**每页的数量*/
+    private long pageSize;
+    /**总页数*/
+    private long pages;
+    /**总记录数*/
+    private long total;
+    /**内容*/
+    private List<T> rows;
 
     public PageResult() {
     }

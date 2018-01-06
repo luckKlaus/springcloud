@@ -38,7 +38,7 @@ public class TestMain {
 
     @Test
     public void testDB(){
-        PageHelper.startPage(2, 3);
+        PageHelper.startPage(1, 3);
         PageInfo<UserTest> pageinfo = new PageInfo<UserTest>(userTestDao.queryUserTestResult(new UserTest()));
         PageResult<UserTest> pageResult = new PageResult<UserTest>(pageinfo);
         System.out.println(JsonUtil.objectToJson(pageResult));
