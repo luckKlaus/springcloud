@@ -76,7 +76,7 @@
         <appender-ref ref="CONSOLE" />
         </logger>
         <!-- 基础节点正式生产环境建议为ERROR -->
-        <root level="debug">
+        <root level="info">
             <appender-ref ref="clientError"/>
         </root>
     </springProfile>

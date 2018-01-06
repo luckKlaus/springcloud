@@ -13,6 +13,9 @@ import java.util.List;
 public interface UserTestDao extends MyMapper<UserTest> {
 
 
+
+    List<UserTest> queryUserTestResult(UserTest record);
+
     @Select("SELECT * FROM  user_test")
     List<UserTest> queryUserTestResultSql();
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luck.cloud.gateway.dao.UserTestDao">
+    <resultMap id="UserTestMap" type="com.luck.cloud.gateway.entity.UserTest">
+        <result property="userName" column="userName"/>
+        <result property="age" column="age"/>
+    </resultMap>
+
+    <!-- 查询appUserLoginLog列表数据 -->
+    <select id="queryUserTestResult" resultMap="UserTestMap" parameterType="com.luck.cloud.gateway.entity.UserTest">
+        SELECT * FROM user_test WHERE 1=1
+        <if test="userName!=null and userName!=''">
+            AND userName = #{userName}
+        </if>
+    </select>
+
+
+</mapper>

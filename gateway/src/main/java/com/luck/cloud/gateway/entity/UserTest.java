@@ -14,7 +14,16 @@ public class UserTest {
     private String userName;
     /**年龄*/
     private Integer age;
+    /**密码*/
+    private String passWord;
 
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
 
     public String getUserName() {
         return userName;
